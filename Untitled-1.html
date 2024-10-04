@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آلة حاسبة جميلة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* خلفية فاتحة */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* ارتفاع كامل الشاشة */
+            margin: 0; /* إزالة الهوامش */
+        }
+
+        .calculator {
+            background-color: #fff; /* خلفية بيضاء للآلة الحاسبة */
+            border-radius: 15px; /* زوايا دائرية */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* ظل */
+            padding: 20px; /* حشوة */
+            width: 300px; /* عرض ثابت */
+        }
+
+        #display {
+            width: 100%;
+            height: 50px; /* ارتفاع أكبر */
+            font-size: 24px; /* حجم خط أكبر */
+            text-align: right; /* محاذاة إلى اليمين */
+            margin-bottom: 15px; /* هامش سفلي */
+            padding: 10px; /* حشوة */
+            border: 1px solid #ccc; /* حدود خفيفة */
+            border-radius: 10px; /* زوايا دائرية */
+            background-color: #f9f9f9; /* خلفية رمادية فاتحة */
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 أعمدة */
+            gap: 10px; /* فراغ بين الأزرار */
+        }
+
+        button {
+            padding: 20px; /* حشوة */
+            font-size: 18px; /* حجم خط */
+            border: none; /* بدون حدود */
+            border-radius: 10px; /* زوايا دائرية */
+            background-color: #4CAF50; /* لون زر */
+            color: white; /* نص أبيض */
+            cursor: pointer; /* شكل المؤشر */
+            transition: background-color 0.3s; /* تأثير التحويل */
+        }
+
+        button:hover {
+            background-color: #45a049; /* لون أغمق عند التمرير */
+        }
+
+        .operator {
+            background-color: #ff9800; /* لون مختلف للعمليات */
+        }
+
+        .operator:hover {
+            background-color: #e68900; /* لون أغمق للعمليات عند التمرير */
+        }
+
+        .equals {
+            background-color: #2196F3; /* لون زر المساواة */
+            grid-column: span 2; /* عرض الزر عبر عمودين */
+        }
+
+        .equals:hover {
+            background-color: #1976D2; /* لون أغمق عند التمرير */
+        }
+
+        .clear {
+            background-color: #f44336; /* لون زر المسح */
+        }
+
+        .clear:hover {
+            background-color: #d32f2f; /* لون أغمق عند التمرير */
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled />
+        <div class="buttons">
+            <button class="clear" onclick="document.getElementById('display').value = ''">C</button>
+            <button onclick="document.getElementById('display').value += '7'">7</button>
+            <button onclick="document.getElementById('display').value += '8'">8</button>
+            <button onclick="document.getElementById('display').value += '9'">9</button>
+            <button class="operator" onclick="document.getElementById('display').value += '/'">/</button>
+
+            <button onclick="document.getElementById('display').value += '4'">4</button>
+            <button onclick="document.getElementById('display').value += '5'">5</button>
+            <button onclick="document.getElementById('display').value += '6'">6</button>
+            <button class="operator" onclick="document.getElementById('display').value += '*'">*</button>
+
+            <button onclick="document.getElementById('display').value += '1'">1</button>
+            <button onclick="document.getElementById('display').value += '2'">2</button>
+            <button onclick="document.getElementById('display').value += '3'">3</button>
+            <button class="operator" onclick="document.getElementById('display').value += '-'">-</button>
+
+            <button onclick="document.getElementById('display').value += '0'">0</button>
+            <button class="equals" onclick="document.getElementById('display').value = eval(document.getElementById('display').value)">=</button>
+            <button class="operator" onclick="document.getElementById('display').value += '+'">+</button>
+        </div>
+    </div>
+</body>
+</html>
